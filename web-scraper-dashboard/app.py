@@ -50,11 +50,11 @@ for site in sites:
 
 df = pd.DataFrame(all_posts)
 
-# Arama filtresi
+
 if search_term and not df.empty:
     df = df[df["title"].str.contains(search_term, case=False, na=False)]
 
-# Göster
+
 if not df.empty:
     st.subheader(f"{len(df)} başlık bulundu")
     st.dataframe(df)
@@ -63,4 +63,5 @@ if not df.empty:
     st.bar_chart(df["title_length"])
 else:
     st.write("Hiç başlık bulunamadı.")
+
 
