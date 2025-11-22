@@ -8,7 +8,7 @@ st.title("Yazılım Blog Arama Dashboard")
 
 search_term = st.text_input("Aramak istediğin yazılım dili:", "")
 
-# Siteler listesi
+
 sites = [
     {
         "name": "Python Blog",
@@ -29,7 +29,7 @@ sites = [
 
 all_posts = []
 
-# Her site için veri çek
+
 for site in sites:
     try:
         response = requests.get(site["url"])
@@ -63,3 +63,4 @@ if not df.empty:
     st.bar_chart(df["title_length"])
 else:
     st.write("Hiç başlık bulunamadı.")
+
